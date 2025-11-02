@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 :root {
     --background-dark-mode: #0b090a;
     --background-light-mode: #f5f3f4;
@@ -7,16 +12,199 @@
     --third-color-red: #ba181b;
     --forth-color-green: #7ff372;
 }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Dark / Light Mode */
+body.light-mode {
+  background-color: var(--background-light-mode);
+  color: #111;
+}
 
+body.dark-mode {
+  background-color: var(--background-dark-mode);
+  color: #f4f4f4;
+}
 /* Header Start */
+.hero {
+  height: 100vh;
+  background-image: url(images/hero-img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* Header End */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
 
+/* ===== HEADER IN HERO ===== */
+.hero-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  z-index: 10;
+}
+
+.hamburger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--primery-color-light);
+  cursor: pointer;
+}
+
+.hamburger-text{
+    font-size: 0.8rem;
+    margin-left: 4px;
+}
+
+.logo {
+  width: 180px;
+  height: 200px;
+  object-fit: cover;
+  
+
+}
+
+/* Theme switcher wrapper */
+.theme-toggle-wrapper {
+   position: relative;
+  width: 60px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 34px;
+  padding: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+/* Döljer checkbox */
+.theme-toggle-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Ikoner */
+.theme-toggle-label .icon-moon,
+.theme-toggle-label .icon-sun {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px; 
+    line-height: 1;
+    width: 16px;   
+    height: 16px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; 
+}
+
+.icon-moon img,
+.icon-sun img {
+  width: 20px;      
+  height: 20px;     
+  object-fit: contain;
+  display: block;
+}
+
+.icon-moon {
+  left: 8px;
+}
+
+.icon-sun {
+  right: 8px;
+}
+
+/* Boll som flyttas */
+.theme-toggle-ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Flytta bollen när checkbox är ikryssad */
+.theme-toggle-checkbox:checked + .theme-toggle-label .theme-toggle-ball {
+  transform: translateX(26px);
+}
+
+
+/*  Hero Text  */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(2px); 
+  padding: 20px 40px;
+  border: 0 solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
+
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--third-color-red);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a4161a;
+}
+
+
+/* Hero End */
 /* Intro Start */
 
+
+        
 /* Intro End */
 
-/* Main Start */
+/* Main Start */     
 
 /* Main End */
 
@@ -25,5 +213,11 @@
 /* Footer End */
 
 /* Responsiv Start */
-
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1.2rem; }
+  .cta-button { padding: 10px 20px; font-size: 1rem; }
+  .logo { height: 50px; }
+  .hamburger { left: 20px; }
+}
 /* Responsiv End */
