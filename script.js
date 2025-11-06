@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("dark-mode");
     document.body.classList.toggle("light-mode");
   });
-});
+    const hamburger = document.querySelector('.hamburger');
+  const menu = document.getElementById('menu-list');
 
+  hamburger.addEventListener('click', () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+});
 

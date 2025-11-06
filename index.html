@@ -12,23 +12,28 @@
     <title>Turbo Shop</title>
   </head>
   <body>
-    <!-- Hero Start -->
-    <section class="hero">
-      <header class="hero-header">
-        <button class="hamburger">☰ Meny</button>
-        <div class="menu-list" id="menu-list">
-          <a href="#hem">Hem</a>
-          <a href="#Om">Om Porsche</a>
-          <a href="#utforska">Utforska bilarna</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
+    <!-- HERO -->
 
+    <section class="hero">
+      <header class="hero-header" id="start">
+    
+        <!-- Menu part -->
+        <button class="hamburger">☰</button>
+        <div class="menu-list" id="menu-list">
+          <ul id="menu">
+            <li><a href="#porsche">Om Porsche</a></li>
+            <li><a href="#main">Utforska bilarna</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </div>
+        
+        <!-- Logo part -->
         <img
           src="icons/logo/Turbo-logo-transparent.png"
           alt="turbo logo"
           class="logo"
         />
-        <!-- Glas Switcher -->
+        <!-- Switcher -->
         <div class="theme-toggle-wrapper">
           <input
             type="checkbox"
@@ -36,17 +41,16 @@
             class="theme-toggle-checkbox"
           />
           <label for="theme-toggle" class="theme-toggle-label">
-            <!-- Ikoner -->
+            
             <span class="icon-moon"
               ><img src="icons/logo/dark-moon.svg"
             /></span>
             <span class="icon-sun"><img src="icons/logo/light-sun.svg" /></span>
-            <!-- Flyttande boll -->
+            
             <span class="theme-toggle-ball"></span>
           </label>
         </div>
       </header>
-      <!-- Header End -->
 
       <!-- Hero Content -->
       <div class="hero-content">
@@ -56,7 +60,8 @@
       </div>
     </section>
     
-    <!-- Intro Start -->
+    <!-- INTRO -->
+
     <section class="intro" id="porsche">
       <div class="intro-text-box">
         <h1>Prosche</h1>
@@ -82,15 +87,12 @@
           engagemang för framtiden med hållbar mobilitet.
         </p>
       </div>
-      
-        <img src="images/panamera.png" alt="porsche panamera" width="500px" />
-      
+        <img src="images/panamera.png" alt="porsche panamera" width="500px" />  
     </section>
-    <!-- Intro End -->
 
-    <!-- Main Start -->
-    <!-- Bild, text, btn -->
-    <section class="main">
+    <!-- MAIN -->
+
+    <section class="main" id="main">
       <div class="card">
           <img src="images/panamera.png" alt="panamera" />
           <h2>Porsche Panamera</h2>
@@ -145,35 +147,28 @@
             <button class="buy.btn">Köp</button>
           </a>
         </div>
-        <div class="card">
-          <img src="images/718.png" alt="718" />
-          <h2>Porsche 718 Cayman</h2>
-          <h4>Från 1 670 000kr</h4>
-          <h3>Perfectly irrational</h3>
-          <p>
-            Ett knivskarpt banverktyg. Ett smidigt mittmotorkoncept. En 6-cylindrig sugmotor på 4 liter 368 kW (500 HK). Ett koncept med högt varvtal som lätt når 9000-strecket. Rationellt? Inte alltid. Perfekt. Alltid.
-          </p>
-          <a
-            href="https://www.porsche.com/sweden/models/718/718-cayman-gt4-rs/718-cayman-gt4-rs/"
-            class="buy.btn"
-            target="_blank"
-          >
-            <button class="buy.btn">Köp</button>
-          </a>
-        </div>
+       
       </div>
     </section>
-    <!-- Main End -->
 
-    <!-- Footer Start -->
+    <!-- FOOTER -->
+     
     <footer>
       <section class="footer-section">
         <div class="footer-content">
           <h4>Meny</h4>
           <ul>
-            <li>Hem</li>
-            <li>Om Prosche</li>
-            <li>Utforska bilarna</li>
+            <a href="#start">
+
+              <li>Hem</li>
+            </a>
+            <a href="#porsche">
+              <li>Om Prosche</li>
+            </a>
+            <a href="#main">
+
+              <li>Utforska bilarna</li>
+            </a>
             <li>Kontakt</li>
           </ul>
         </div>
@@ -195,9 +190,8 @@
           </ul>
         </div>
       </section>
+      <p> © 2025 <a href="https://github.com/NM-Codes" target="_blank">NM-Codes</a> - Turbo Shop</p>
     </footer>
-    <!-- Footer End -->
-
     <script src="script.js"></script>
   </body>
 </html>

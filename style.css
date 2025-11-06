@@ -13,6 +13,7 @@
   --forth-color--dark-blue: #003049;
   --fifth-color-light-blue: #669bbc;
 }
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -21,7 +22,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Dark / Light Mode */
+/*  DARK -LIGHT MODE STYLE */
+
 body.light-mode {
   background-color: var(--background-light-mode);
   color: #111;
@@ -47,15 +49,23 @@ body.dark-mode .intro-text-box {
   color: var(--secondary-color-beige);
   border-left: 2px solid var(--secondary-color-beige);
 }
-body.light-mode .card{
-  box-shadow: 3px 3px 0px 0px rgb(250, 250, 250), 6px 6px 0px 0px rgba(255, 0, 0, 1);
+body.light-mode .card {
+  box-shadow: 3px 3px 0px 0px rgb(250, 250, 250),
+    6px 6px 0px 0px rgba(255, 0, 0, 1);
 }
-body.light-mode footer{
+body.light-mode footer {
   background-color: var(--secondary-color-beige);
   color: var(--primery-color-dark);
 }
+body.light-mode footer a{
+  color: var(--primery-color-dark);
+}
+body.light-mode footer a:hover{
+  color: var(--third-color-red);
+}
+/*  HEADER  */
 
-/* Header Start */
+/* Hero part */
 .hero {
   height: 100vh;
   background-image: url(images/hero-img.jpg);
@@ -89,28 +99,66 @@ body.light-mode footer{
   z-index: 10;
 }
 
+/* Menu part */
 .hamburger {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 1.5rem;
+  position: relative;
+  font-size: 3rem;
   background: none;
   border: none;
-  color: var(--primery-color-light);
+  color: var(--background-light-mode);
   cursor: pointer;
+  z-index: 10;
+}
+.hamburger:hover {
+  opacity: 0.8;
+}
+#menu-list {
+  display: none;
+  position: absolute;
+  top: 140px;
+  left: 10px;
+  background-color: var(--background-dark-mode);
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.menu-list.active {
+  display: block;
+}
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.menu-list {
-
+#menu li {
+  margin: 10px 0;
 }
 
+#menu li a {
+  text-decoration: none;
+  color: var(--background-light-mode);
+  font-weight: bold;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); 
+}
+/* Logo part */
 .logo {
   width: 180px;
   height: 200px;
   object-fit: cover;
 }
 
-/* Theme switcher wrapper */
+/* Dark/light mode switscher*/
 .theme-toggle-wrapper {
   position: relative;
   width: 60px;
@@ -119,19 +167,16 @@ body.light-mode footer{
   backdrop-filter: blur(10px);
   border-radius: 34px;
   padding: 2px;
-
   transition: background 0.3s;
   flex-shrink: 0;
 }
 
-/* Döljer checkbox */
 .theme-toggle-checkbox {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* Ikoner */
 .theme-toggle-label .icon-moon,
 .theme-toggle-label .icon-sun {
   position: absolute;
@@ -163,7 +208,6 @@ body.light-mode footer{
   right: 8px;
 }
 
-/* Boll som flyttas */
 .theme-toggle-ball {
   position: absolute;
   top: 2px;
@@ -177,12 +221,12 @@ body.light-mode footer{
   cursor: pointer;
 }
 
-/* Flytta bollen när checkbox är ikryssad */
 .theme-toggle-checkbox:checked + .theme-toggle-label .theme-toggle-ball {
   transform: translateX(26px);
 }
 
-/*  Hero Text  */
+/*  HERO  */
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -222,7 +266,8 @@ body.light-mode footer{
   color: var(--third-color-red);
 }
 
-/* Intro Start */
+/*  INTRO  */
+
 .intro {
   max-width: 1000px;
   margin: 30px auto;
@@ -253,7 +298,7 @@ body.light-mode footer{
   margin-bottom: 20px;
 }
 
-/* Main Start */
+/* MAIN*/
 
 .main {
   display: flex;
@@ -264,28 +309,31 @@ body.light-mode footer{
   margin-bottom: 20px;
 }
 
-/* KORTSTILAR */
+/* Card style */
+
 .card {
   width: 500px;
   background-color: var(--third-color-red);
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1), 6px 6px 0px 0px var(--secondary-color-beige);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1),
+    6px 6px 0px 0px var(--secondary-color-beige);
   color: var(--background-light-mode);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   padding: 20px;
   border-radius: 8px;
 }
-.card a{
+.card a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
-/* BILD */
+
 .card img {
   width: 100%;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
-/* RUBRIKER OCH TEXT */
+
 .card h2 {
   font-size: 1.4rem;
   margin: 10px;
@@ -293,17 +341,16 @@ body.light-mode footer{
 
 .card h3 {
   margin: 10px;
-  
+
   font-size: 1.1rem;
 }
 
 .card p {
   font-size: 0.95rem;
   color: var(--background-light-mode);
-  margin:10px;
+  margin: 10px;
 }
 
-/* KNAPP */
 .card button {
   background-color: var(--fifth-color-light-blue);
   color: var(--background-dark-mode);
@@ -319,7 +366,9 @@ body.light-mode footer{
   background-color: var(--forth-color--dark-blue);
   color: var(--background-light-mode);
 }
-/* Footer Start  */
+
+/* FOOTER */
+
 footer {
   background-color: var(--primery-color-dark);
   color: var(--background-light-mode);
@@ -333,6 +382,14 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+footer a {
+  text-decoration: none;
+  color: var(--background-light-mode);
+  cursor: pointer;
+}
+footer a:hover {
+  color: var(--third-color-red);
+}
 
 footer ul {
   list-style: none;
@@ -341,6 +398,15 @@ footer ul {
 }
 footer h4 {
   margin-bottom: 10px;
+}
+
+footer p{
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 
 /* Responsiv */
@@ -361,13 +427,11 @@ footer h4 {
   .hamburger {
     left: 20px;
   }
-  .main{
+  .main {
     flex-direction: column;
     align-items: center;
   }
-  .card{
+  .card {
     width: 90%;
   }
 }
-
-
