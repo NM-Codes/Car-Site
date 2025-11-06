@@ -93,9 +93,8 @@ body.dark-mode .intro-text-box {
   cursor: pointer;
 }
 
-.hamburger-text {
-  font-size: 0.8rem;
-  margin-left: 4px;
+.menu-list {
+
 }
 
 .logo {
@@ -250,38 +249,32 @@ body.dark-mode .intro-text-box {
 /* Main Start */
 
 .main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  justify-items: center;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 /* KORTSTILAR */
 .card {
+  width: 500px;
   background-color: var(--third-color-red);
-  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: var(--background-light-mode);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
+  border-radius: 8px;
 }
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.card a{
+  display: flex;
+  justify-content: center;
 }
-
 /* BILD */
 .card img {
   width: 100%;
-  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* RUBRIKER OCH TEXT */
@@ -291,14 +284,15 @@ body.dark-mode .intro-text-box {
 }
 
 .card h3 {
+  margin: 10px;
+  text-align: center;
   font-size: 1.1rem;
-  margin-bottom: 8px;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: var(--primery-color-light);
-  margin-bottom: 16px;
+  color: var(--background-light-mode);
+  margin:10px;
 }
 
 /* KNAPP */
@@ -341,7 +335,7 @@ footer h4 {
   margin-bottom: 10px;
 }
 
-/* Responsiv Start */
+/* Responsiv */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2rem;
@@ -359,6 +353,13 @@ footer h4 {
   .hamburger {
     left: 20px;
   }
+  .main{
+    flex-direction: column;
+    align-items: center;
+  }
+  .card{
+    width: 90%;
+  }
 }
 
-/* Responsiv End */
+
