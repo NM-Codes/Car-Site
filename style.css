@@ -47,6 +47,13 @@ body.dark-mode .intro-text-box {
   color: var(--secondary-color-beige);
   border-left: 2px solid var(--secondary-color-beige);
 }
+body.light-mode .card{
+  box-shadow: 3px 3px 0px 0px rgb(250, 250, 250), 6px 6px 0px 0px rgba(255, 0, 0, 1);
+}
+body.light-mode footer{
+  background-color: var(--secondary-color-beige);
+  color: var(--primery-color-dark);
+}
 
 /* Header Start */
 .hero {
@@ -254,13 +261,14 @@ body.dark-mode .intro-text-box {
   justify-content: center;
   gap: 20px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 /* KORTSTILAR */
 .card {
   width: 500px;
   background-color: var(--third-color-red);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1), 6px 6px 0px 0px var(--secondary-color-beige);
   color: var(--background-light-mode);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   padding: 20px;
@@ -280,12 +288,12 @@ body.dark-mode .intro-text-box {
 /* RUBRIKER OCH TEXT */
 .card h2 {
   font-size: 1.4rem;
-  margin: 6px 0;
+  margin: 10px;
 }
 
 .card h3 {
   margin: 10px;
-  text-align: center;
+  
   font-size: 1.1rem;
 }
 
