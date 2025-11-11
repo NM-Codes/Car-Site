@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("theme-toggle");
+const toggle = document.getElementById("theme-toggle");
 
   // Default dark mode
   if (!document.body.classList.contains("dark-mode") && !document.body.classList.contains("light-mode")) {
